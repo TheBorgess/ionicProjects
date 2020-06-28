@@ -1,0 +1,40 @@
+
+<ion-header> <!--translucent>-->
+  <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+         <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-title>Vendas</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="FilterJSONData($event)" Animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+     <ion-fab-button routerLink="/sale">  
+        <ion-icon name="add"></ion-icon>
+     </ion-fab-button>
+  </ion-fab>
+
+  <ion-list>
+    <!--<ion-item>Faturamento:&nbsp;&nbsp;&nbsp;
+      <ion-title color="primary" size="small">
+             <b> {{total2 | currency:"BRL":true:"1.2"}}</b>
+      </ion-title>
+    </ion-item>
+    <ion-item>Saldo Devedor:
+      <ion-title color="danger" size="small">
+             <b> {{total | currency:"BRL":true:"1.2"}}</b>
+      </ion-title>
+    </ion-item>-->
+
+    <!--<ion-item *ngFor="let sale of (sales | async)" [routerLink]="['/sale', sale.id]"> -->
+    <ion-item *ngFor="let sale of sales2" [routerLink]="['/sale', sale.id]"> 
+         {{sale.cliente}}  
+    </ion-item>
+  </ion-list> 
+
+</ion-content> 

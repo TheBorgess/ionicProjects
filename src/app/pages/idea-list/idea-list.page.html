@@ -1,0 +1,40 @@
+
+<ion-header> 
+  <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+         <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-title>Clientes</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="FilterJSONData($event)" Animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/idea">  
+       <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-list>
+  <!-- <ion-list *ngFor="let client of (ideas | async)" [routerLink]="['/idea', client.id]"> -->
+  <ion-item *ngFor="let client of ideas2" [routerLink]="['/idea', client.id]">
+
+    <!-- PÁGINA QUE LISTA OS CLIENTES CADASTRADOS--> 
+      <!--<ion-item>-->
+        <ion-avatar slot="start">
+          <img src="./assets/images/foto.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{client.name}}</h2>
+          <p>{{client.notes}}</p>
+        </ion-label>
+      
+      </ion-item>  
+
+  </ion-list> 
+
+</ion-content>

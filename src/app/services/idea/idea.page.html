@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+     </ion-buttons> 
+    <ion-title>Relatório</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>Vendas:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ion-title color="primary" size="small">
+             <b> {{total2 | currency:"BRL":true:"1.2"}}</b>
+      </ion-title>
+    </ion-item>
+    <ion-item>Saldo Devedor:
+      <ion-title color="danger" size="small">
+             <b> {{total | currency:"BRL":true:"1.2"}}</b>
+      </ion-title>
+    </ion-item>
+    <ion-item>Diferença:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ion-title color="success" size="small">
+             <b> {{total3 | currency:"BRL":true:"1.2"}}</b>
+      </ion-title>
+    </ion-item>
+
+  </ion-list> 
+
+</ion-content> 
